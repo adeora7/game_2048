@@ -118,9 +118,38 @@ function moveRight(){
 	}
 	addNumber();
 }
-function moveUp(){
-	console.log("Up");
 
+function moveUp(){
+	for(let i = 0; i< grid[0].length; i++)
+	{
+		let slow = 0;
+		for(let fast = 0; fast< grid.length; fast++)
+		{
+			if(readNumber(fast, i)>0)
+			{
+				grid[slow][i].innerHTML = grid[fast][i].innerHTML;
+				if(fast!=slow)
+					grid[fast][i].innerHTML = "";
+				slow++;
+			}
+		}
+	}//some error here... fill empty space
+
+
+	for (var i = 0; i < grid[0].length; i++) {
+		for(var j = 0;j< grid.length-1; j++)
+		{
+			if(readNumber(j,i) == readNumber(j+1,i) && readNumber(j,i) != 0)
+			{
+				grid[j][i].innerHTML = readNumber(j,i)*2;
+				for(var k=j+1; k< grid.length-1; k++)
+				{
+					grid[k][i].innerHTML = grid[k+1][i].innerHTML;
+				}
+				grid[grid.length-1][i].innerHTML = "";
+			}
+		}
+	}
 	addNumber();
 }
 
