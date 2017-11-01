@@ -52,15 +52,16 @@ function readNumber(row, column)
 }
 
 function moveLeft(){
-	for(var i = 0; i< grid.length; i++)
+	for(let i = 0; i< grid.length; i++)
 	{
 		let slow = 0;
-		for(var fast = 0; fast< grid.length; fast++)
+		for(let fast = 0; fast< grid[i].length; fast++)
 		{
 			if(readNumber(i, fast)>0)
 			{
 				grid[i][slow].innerHTML = grid[i][fast].innerHTML;
-				grid[i][fast].innerHTML = "";
+				if(fast!=slow)
+					grid[i][fast].innerHTML = "";
 				slow++;
 			}
 		}
