@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>2048</title>
+	<style type="text/css">
+		canvas{
+			border: 1px solid gray;
+		}
+		body{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		#fork_me{
+			position: fixed;
+			right: 0;
+			top: 0;
+		}
+		#game{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.gameRow{
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+		.gameColumn{
+			border: 1px solid gray;
+			width: 50px;
+			height:50px;
+		}
+
+	</style>
+	<script type="text/javascript" src="js/p5.min.js"></script>
+</head>
+<body>
+	<a id="fork_me" href="https://github.com/adeora7/game_2048"><img src="images/fork.png" width="150"></a>
+	<h2>2048</h2>
+	<div id="game">
+		<div class="gameRow">
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+		</div>
+		<div class="gameRow">
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+		</div>
+		<div class="gameRow">
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+		</div>
+		<div class="gameRow">
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+			<div class="gameColumn">
+				2
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/main1.js"></script>
+</body>
+</html>
