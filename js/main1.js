@@ -43,8 +43,7 @@ function init(){
 
 }
 
-function readNumber(row, column)
-{
+function readNumber(row, column){
 	if(grid[row][column].innerHTML.trim() == "")
 		return 0;
 	else
@@ -133,7 +132,7 @@ function moveUp(){
 				slow++;
 			}
 		}
-	}//some error here... fill empty space
+	}
 
 
 	for (var i = 0; i < grid[0].length; i++) {
@@ -154,8 +153,36 @@ function moveUp(){
 }
 
 function moveDown(){
-	console.log("Down");
+	for(let i = 0; i< grid[0].length; i++)
+	{
+		let slow = grid.length-1;
+		for(let fast = grid.length-1; fast>=0; fast--)
+		{
+			if(readNumber(fast, i)>0)
+			{
+				grid[slow][i].innerHTML = grid[fast][i].innerHTML;
+				if(fast!=slow)
+					grid[fast][i].innerHTML = "";
+				slow--;
+			}
+		}
+	}
 
+
+	for (var i = 0; i < grid[0].length; i++) {
+		for(var j = grid.length-1;j>0; j--)
+		{
+			if(readNumber(j,i) == readNumber(j-1,i) && readNumber(j,i) != 0)
+			{
+				grid[j][i].innerHTML = readNumber(j,i)*2;
+				for(var k=j-1; k>0; k--)
+				{
+					grid[k][i].innerHTML = grid[k-1][i].innerHTML;
+				}
+				grid[0][i].innerHTML = "";
+			}
+		}
+	}
 	addNumber();
 }
 
