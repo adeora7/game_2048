@@ -1,5 +1,5 @@
-# flappy_bird
+# 2048
 
-Flappy bird game made using p5js and written in core javascript.
+2048 written in core javascript.
 
-Demo : https://adeora7.github.io/flappy_bird
+Demo : https://adeora7.github.io/game_2048
