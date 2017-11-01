@@ -65,7 +65,7 @@ function moveLeft(){
 				slow++;
 			}
 		}
-	}//some error here... fill empty space
+	}
 
 
 	for (var i = 0; i < grid.length; i++) {
@@ -86,11 +86,38 @@ function moveLeft(){
 }
 
 function moveRight(){
-	console.log("Right");
+	for(let i = 0; i< grid.length; i++)
+	{
+		let slow = grid[i].length-1;
+		for(let fast = grid[i].length-1; fast>=0; fast--)
+		{
+			if(readNumber(i, fast)>0)
+			{
+				grid[i][slow].innerHTML = grid[i][fast].innerHTML;
+				if(fast!=slow)
+					grid[i][fast].innerHTML = "";
+				slow--;
+			}
+		}
+	}
 
+
+	for (var i = 0; i < grid.length; i++) {
+		for(var j = grid[i].length-1; j>0 ; j--)
+		{
+			if(readNumber(i,j) == readNumber(i,j-1) && readNumber(i,j) != 0)
+			{
+				grid[i][j].innerHTML = readNumber(i,j)*2;
+				for(var k=j-1; k>0; k--)
+				{
+					grid[i][k].innerHTML = grid[i][k-1].innerHTML;
+				}
+				grid[i][0].innerHTML = "";
+			}
+		}
+	}
 	addNumber();
 }
-
 function moveUp(){
 	console.log("Up");
 
